@@ -1,11 +1,16 @@
 package ico.david.obj;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ariok David
  */
 public class AlumnoU {
     private int cuentaUNAM;
+    private String cntrsn;
     private String nombre;
     private String apellidos;
     private String institucion;
@@ -14,8 +19,9 @@ public class AlumnoU {
     public AlumnoU() {
     }
 
-    public AlumnoU(int cuentaUNAM, String nombre, String apellidos, String institucion, String carrera) {
+    public AlumnoU(int cuentaUNAM, String cntrn, String nombre, String apellidos, String institucion, String carrera) {
         this.cuentaUNAM = cuentaUNAM;
+        this.cntrsn = cntrn;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.institucion = institucion;
@@ -30,6 +36,14 @@ public class AlumnoU {
         this.cuentaUNAM = cuentaUNAM;
     }
 
+    public String getCntrsn() {
+        return cntrsn;
+    }
+
+    public void setCntrsn(String cntrsn) {
+        this.cntrsn = cntrsn;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -62,4 +76,25 @@ public class AlumnoU {
         this.carrera = carrera;
     }
     
+    //Metodo para guardar datos en el archivo txt(mini base de datos gg)
+    
+    public void escribirArchivo(String cuentaT, String cntrsnT, String nombreT, String apellidosT, String institucionT, String carrera){
+        String nuevoAlumno = "";
+        nuevoAlumno = cuentaT + "*" + cntrsnT + "*" + nombreT + "*" + apellidosT + "*" + institucionT + "*" + carrera;
+        
+        //A continuación se guardan los datos en el archivo
+        
+        FileWriter fichero;
+        PrintWriter pw;
+        try {
+            fichero = new FileWriter("Usuarios.txt", true);
+            pw = new PrintWriter(fichero);
+            pw.println(nuevoAlumno);
+            pw.close();
+            fichero.close();
+            JOptionPane.showConfirmDialog(null, "El usuario " + cuentaT + " se ha guardado correctamente.", "Confirmación", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "No ha sido posible registrarlo, porfavor revise que ha llenado los campos correctamente", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);            
+        }
+    }
 }
