@@ -97,4 +97,5 @@ public class AlumnoU {
             JOptionPane.showConfirmDialog(null, "No ha sido posible registrarlo, porfavor revise que ha llenado los campos correctamente", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);            
         }
     }
+    
 }
