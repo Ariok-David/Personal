@@ -77,6 +77,11 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel4.setText("Contraseña");
 
         jButton1.setText("Iniciar Sesión");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("No tinenes cuenta?");
 
@@ -301,6 +306,13 @@ public class InicioSesion extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(null, "Las contraseñas no coinciden por favor revisalas", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String u = jTextField1.getText();
+        String c = jPasswordField1.getText();
+        AlumnoU ingre = new AlumnoU();
+        JOptionPane.showConfirmDialog(null, ingre.iniciarSesion(u, c), "Entro", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public void limpiar(){
         jTextField1.setText("");
