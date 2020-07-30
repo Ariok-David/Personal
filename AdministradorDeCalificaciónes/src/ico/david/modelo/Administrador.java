@@ -5,6 +5,8 @@
  */
 package ico.david.modelo;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Ariok David
@@ -199,6 +201,13 @@ public class Administrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void cargarDatos( String nombreCompleto, String instituto, String carreer){
+        jLabel3.setText(nombreCompleto);
+        jLabel5.setText(instituto);
+        jLabel7.setText(carreer);
+       
+    }
+    
     /**
      * @param args the command line arguments
      */

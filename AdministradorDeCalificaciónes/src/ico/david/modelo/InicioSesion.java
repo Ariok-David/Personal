@@ -310,8 +310,16 @@ public class InicioSesion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String u = jTextField1.getText();
         String c = jPasswordField1.getText();
+        String datos = null;
+        String[] datosSeparados = null;
         AlumnoU ingre = new AlumnoU();
-        JOptionPane.showConfirmDialog(null, ingre.iniciarSesion(u, c), "Entro", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        datos = ingre.iniciarSesion(u, c);
+        datosSeparados = datos.split("-");
+        Administrador sesion = new Administrador();
+        sesion.cargarDatos(datosSeparados[2], datosSeparados[3], datosSeparados[4]);
+        sesion.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void limpiar(){

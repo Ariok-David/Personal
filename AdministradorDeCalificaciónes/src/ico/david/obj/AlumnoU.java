@@ -141,7 +141,7 @@ public class AlumnoU {
                     fila.add(carrerat); 
                 }
             }
-            entro = fila.elementAt(0) + "*" + fila.elementAt(1) + "*" + fila.elementAt(2) + "*" + fila.elementAt(3) + "*" + fila.elementAt(4) + "*" + fila.elementAt(5);
+            entro = fila.elementAt(0) + "-" + fila.elementAt(1) + "-" + fila.elementAt(2) + " " + fila.elementAt(3) + "-" + fila.elementAt(4) + "-" + fila.elementAt(5);
             br.close();
             fr.close();
         } catch (Exception e) {
