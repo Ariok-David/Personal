@@ -84,7 +84,7 @@ public class AlumnoU {
     
     public void escribirArchivo(String cuentaT, String cntrsnT, String nombreT, String apellidosT, String institucionT, String carrera){
         String nuevoAlumno = "";
-        nuevoAlumno = cuentaT + "*" + cntrsnT + "*" + nombreT + "*" + apellidosT + "*" + institucionT + "*" + carrera;
+        nuevoAlumno = cuentaT + "-" + cntrsnT + "-" + nombreT + "-" + apellidosT + "-" + institucionT + "-" + carrera;
         
         //A continuación se guardan los datos en el archivo
         
