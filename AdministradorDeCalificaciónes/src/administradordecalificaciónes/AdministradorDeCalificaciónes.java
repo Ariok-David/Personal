@@ -1,5 +1,7 @@
 package administradordecalificaciónes;
 
+import ico.david.modelo.InicioSesion;
+
 /**
  *
  * @author Ariok David
@@ -7,7 +9,8 @@ package administradordecalificaciónes;
 public class AdministradorDeCalificaciónes {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        InicioSesion ventana = new InicioSesion();
+        ventana.setVisible(true);
     }
     
 }

@@ -316,7 +316,7 @@ public class InicioSesion extends javax.swing.JFrame {
         datos = ingre.iniciarSesion(u, c);
         datosSeparados = datos.split("-");
         Administrador sesion = new Administrador();
-        sesion.cargarDatos(datosSeparados[2], datosSeparados[3], datosSeparados[4]);
+        sesion.cargarDatos(datosSeparados[0] , datosSeparados[2], datosSeparados[3], datosSeparados[4]);
         sesion.setVisible(true);
         this.setVisible(false);
         
