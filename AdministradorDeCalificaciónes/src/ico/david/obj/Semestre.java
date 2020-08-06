@@ -1,7 +1,11 @@
 package ico.david.obj;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -86,5 +90,37 @@ public class Semestre {
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, "No ha sido posible añadir la materia, porfavor revise si ha ingresado los datos correctamente", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
         }
+    }
+    
+    //Metodo para regresar un Arraylist para el modelo del combo box seleccionador de materias
+  
+    public ArrayList<String> getListOfSemestres (String identificador){
+        ArrayList<String> semestresOcupados = new ArrayList();
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        
+        try {
+            archivo = new File("Materias.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            String filaLeidaArchivo;
+            String[] cadenaSeparada;
+            while ((filaLeidaArchivo = br.readLine()) != null) {                
+                cadenaSeparada = filaLeidaArchivo.split("-");
+                String identificadort = cadenaSeparada[0];
+                String semestret = cadenaSeparada[1];
+                if (identificadort.equals(identificador)) {
+                    if (!semestresOcupados.contains(semestret)) {
+                        semestresOcupados.add(semestret);
+                    }
+                }
+            }
+            br.close();
+            fr.close();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "No se encuentran los semestres", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        }
+        return semestresOcupados;
     }
 }

@@ -124,7 +124,7 @@ public class AlumnoU {
                 System.out.println(cadenaSeparada[3]);
                 System.out.println(cadenaSeparada[4]);
                 System.out.println(cadenaSeparada[5]);
-                
+                //Editar despues ya tu sabe gg
                 String cuentaUNAMt = cadenaSeparada[0];
                 String cntrsnt = cadenaSeparada[1];
                 String nombret = cadenaSeparada[2];

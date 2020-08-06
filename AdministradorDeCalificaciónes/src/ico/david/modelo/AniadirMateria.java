@@ -20,6 +20,8 @@ public class AniadirMateria extends javax.swing.JFrame {
         initComponents();
     }
     private String cuentaaaa;
+    private String semestreeet;
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -177,9 +179,14 @@ public class AniadirMateria extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Semestre cal = new Semestre();
         cal.aniadirArchivo(cuentaaaa, (String)jComboBox1.getSelectedItem(), jTextField1.getText(), jTextField2.getText(), jComboBox2.getSelectedItem() + "." + jComboBox3.getSelectedItem());
+        semestreeet = (String)jComboBox1.getSelectedItem();
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public String smestreTemporal(){
+        return semestreeet;
+    } 
+            
     /**
      * @param args the command line arguments
      */

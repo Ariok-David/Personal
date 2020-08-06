@@ -5,6 +5,8 @@
  */
 package ico.david.modelo;
 
+import ico.david.obj.Semestre;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -20,6 +22,7 @@ public class Administrador extends javax.swing.JFrame {
         initComponents();
     }
     private String nnn;
+    AniadirMateria gg = new AniadirMateria();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -207,7 +210,6 @@ public class Administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AniadirMateria gg = new AniadirMateria();
         gg.ideee(nnn);
         gg.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -217,6 +219,14 @@ public class Administrador extends javax.swing.JFrame {
         jLabel5.setText(instituto);
         jLabel7.setText(carreer);
         nnn = cuentaaaaa;
+        comboBoxDeAdministrador();
+    }
+    
+    public void comboBoxDeAdministrador(){
+        Semestre semestreActual = new Semestre();
+        ArrayList<String> smstrs = semestreActual.getListOfSemestres(nnn);
+        ModeloComboBox miModelo = new ModeloComboBox( smstrs, ".....");
+        jComboBox1.setModel(miModelo);
     }
     
     /**
